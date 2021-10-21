@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
@@ -11,14 +11,6 @@ const Navbar = () => {
   const user = useSelector(({ authState }) => authState.user);
   const dispatch = useDispatch();
   const shoppingCartState = useSelector(({ shoppingCartState }) => shoppingCartState);
-  // const [ count, setCount ] = useState(shoppingCart.length);
-
-  useEffect(() => {
-    if (shoppingCartState.data.length) {
-      console.log('shoppingCart: ', shoppingCartState);
-    }
-    console.log('shoppingCart: ', shoppingCartState);
-  }, [shoppingCartState]);
 
   return (
     <div
@@ -34,22 +26,16 @@ const Navbar = () => {
               Administration
             </Link> : null
         }
-        <div className="flex flex-col justify-center items-center">
-          <div
-            className="my-2 text-red-500 font-bold text-sm cursor-pointer transform hover:scale-110"
-            onClick={() => dispatch(logoutAction())}
-          >
-            Logout
-          </div>
-          <div className="text-white w-5 h-5">
-            <PersonIcon />
-          </div>
-          <div className="text-white my-2">
+        <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center text-white mr-2">
             {user ? user.userName : null}
+          </div>
+          <div className="text-white flex justify-center items-center">
+            <PersonIcon />
           </div>
         </div>
         <Link to="/shopping-cart"
-          className=" relative text-white mt-1 flex justify-center items-center cursor-pointer transform hover:scale-110"
+          className=" relative text-white mx-4 flex justify-center items-center cursor-pointer transform hover:scale-110"
         >
           {
             shoppingCartState.data.length > 0 ? <div
@@ -61,6 +47,14 @@ const Navbar = () => {
           }
           <ShoppingCartIcon />
         </Link>
+        <div className="flex flex-col justify-center items-center">
+          <div
+            className="my-2 text-red-500 font-bold text-sm cursor-pointer transform hover:scale-110"
+            onClick={() => dispatch(logoutAction())}
+          >
+            Logout
+          </div>
+        </div>
       </div>
     </div>
   );

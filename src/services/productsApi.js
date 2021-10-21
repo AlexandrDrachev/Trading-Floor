@@ -37,7 +37,7 @@ export const getProduct = (productData) => {
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      const findCategory = import('../fake-db/fakeProducts')
+      import('../fake-db/fakeProducts')
         .then((products) => products[category.toLowerCase()])
         .then((res) => {
           const findProduct = res.find((item) => item.name === product);

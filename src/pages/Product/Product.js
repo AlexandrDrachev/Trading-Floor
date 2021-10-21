@@ -13,8 +13,6 @@ const Product = () => {
   const [ productData, setProductData ] = useState(null);
   const { data, loading } = useSelector(({ productState }) => productState);
   const dispatch = useDispatch();
-  const shoppingCart = useSelector(({ shoppingCartState }) => shoppingCartState.data);
-  console.log('shoppingCart: ', shoppingCart);
 
   useEffect(() => {
     if (data) {

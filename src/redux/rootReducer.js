@@ -17,8 +17,6 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   const { appState, authState, homeState, categoryState, productState, shoppingCartState } = state;
 
-  console.log('action.type: ', action.type);
-
   return {
     appState: appReducer(appState, action),
     authState: authReducer(authState, action),

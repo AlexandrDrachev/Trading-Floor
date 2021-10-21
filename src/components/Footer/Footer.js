@@ -19,12 +19,21 @@ const Footer = () => {
             <div className="w-5 h-5 text-white mr-2 flex justify-center items-center"><UpworkIcon /></div>
             <a
               href="https://www.upwork.com/freelancers/~012a861fc6367091d0"
+              rel="noreferrer"
               target="_blank"
-              className="text-sm">Profile</a>
+              className="text-sm transform hover:scale-110 hover:text-pink-400 font-bold">
+              Project brain
+            </a>
           </div>
           <div className="flex justify-center items-center text-white my-1">
             <div className="w-5 h-5 text-white mr-2 flex justify-center items-center"><GitHubIcon /></div>
-            <div className="text-sm">Link to github</div>
+            <a
+              href="https://github.com/AlexandrDrachev/Trading-Floor"
+              rel="noreferrer"
+              target="_blank"
+              className="text-sm transform hover:scale-110 hover:text-pink-400 font-bold">
+              Project code
+            </a>
           </div>
         </div>
       </div>

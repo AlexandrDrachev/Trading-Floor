@@ -9,7 +9,6 @@ export const shoppingCartReducer = (state, action) => {
   switch (action.type) {
 
     case 'ADD_PRODUCT_ACTION':
-      console.log('data: ', state.data);
       return {
         ...state,
         data: action.payload,
